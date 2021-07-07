@@ -5,8 +5,6 @@ using namespace std;
 #define isEven(n) n%2==0
 #define lli long long int
 void solve();
-bool found = false;
-bool isPerfectSquare(int n);
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -18,30 +16,11 @@ int main()
     cin>>t;
     while (t--)
     {
-        found = false;
         solve();
     }
     return 0;
 }
-void isPossible(int n,int a,int b)
-{
-    if(found) return;
-    if(n==a || n==b)
-    {
-        found = true;
-        return;
-    }
-    if(n<min(a,b)) return;
-    if(found) return;
-    if( a!=1 && n%a == 0 ) isPossible(n/a , a , b);
-    isPossible(n-b,a,b);
-}
 void solve()
 {
-   int n,a,b;
-   cin>>n>>a>>b;
-
-   isPossible(n,a,b);
-   if(found) cout<<"Yes\n";
-   else cout<<"No\n";
+  
 } 
