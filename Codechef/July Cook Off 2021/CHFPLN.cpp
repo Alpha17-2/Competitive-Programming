@@ -23,20 +23,16 @@ int main()
 }
 void solve()
 {
-  int n;
-  cin>>n;
-  vector<int> a(n);
+  int n,value;
   map<int,int> elements;
-  loop(0,n){
-    cin>>a[i];
-    elements[a[i]]++;
-  }
-
   lli ans = 0;
-
+  cin>>n;
+  loop(0,n){
+    cin>>value;
+    elements[value]++;
+  }
   for(auto x:elements){
     ans += min(x.second,x.first-1);
   }
-  
   cout<<ans<<"\n"; 
 } 
